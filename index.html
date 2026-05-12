@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-  <html lang="fr">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
@@ -357,7 +357,6 @@
       position: relative;
       overflow: hidden;
     }
-    /* Nouvelle image d'arrière-plan pour la section hero */
     .hero::before {
       content: '';
       position: absolute;
@@ -931,7 +930,7 @@
       .footer-contact { flex-direction: column; align-items: center; gap: 0.8rem; }
     }
     @media (max-width: 480px) {
-      .logo-img { width: 45px; height: 45px; }
+      .logo-img { width: 120px; height: 45px; }
       .logo-text h1 { font-size: 1.2rem; }
     }
   </style>
@@ -1104,9 +1103,7 @@
     const sanitize = function(s) {
       if (!s) return '';
       let str = String(s);
-      // Limitation de longueur
       str = str.substring(0, 400);
-      // Encodage HTML complet
       return str.replace(/[&<>]/g, function(m) {
         if (m === '&') return '&amp;';
         if (m === '<') return '&lt;';
@@ -1119,7 +1116,6 @@
       });
     };
     
-    // Validation des entrées
     const validateInput = function(input, maxLength, pattern) {
       if (!input) return '';
       let cleaned = String(input).trim();
@@ -1141,26 +1137,18 @@
       { id:3, name:"Soungouf Premium", desc:"Farine de mil torréfiée, énergétique.", price:300, priceStr:"300 CFA", img:"sougouf.jpg" },
       { id:4, name:"Arraw Royal", desc:"Idéal pour Lakh, Tiakry, saveur incomparable.", price:250, priceStr:"250 CFA", img:"arraw.jpg" },
       { id:5, name:"Sanxal", desc:"Fait main, avec amour.", price:900, priceStr:"900 CFA", img:"madda.jpg" },
-      { id:5, name:"Noflay", desc:"Fait main, avec amour.", price:900, priceStr:"900 CFA", img:"madda.jpg" },
-      { id:5, name:"Madd", desc:"Fait main, avec amour.", price:900, priceStr:"900 CFA", img:"madda.jpg" },
-      { id:5, name:"Madd", desc:"Fait main, avec amour.", price:900, priceStr:"900 CFA", img:"madda.jpg" },
-      { id:5, name:"Madd", desc:"Fait main, avec amour.", price:900, priceStr:"900 CFA", img:"madda.jpg" },
-      { id:5, name:"Madd", desc:"Fait main, avec amour.", price:900, priceStr:"900 CFA", img:"madda.jpg" },
-      { id:5, name:"Madd", desc:"Fait main, avec amour.", price:900, priceStr:"900 CFA", img:"madda.jpg" }
+      { id:6, name:"Noflay", desc:"Fait main, avec amour.", price:900, priceStr:"900 CFA", img:"madda.jpg" },
+      { id:7, name:"Madd", desc:"Fait main, avec amour.", price:900, priceStr:"900 CFA", img:"madda.jpg" }
     ];
     
     let cart = [];
     const SELLER = "221766168713";
     
-    // Sauvegarde sécurisée du panier
     function saveCart() {
       try {
-        const cartData = JSON.stringify(cart);
-        localStorage.setItem('soxna_cart', cartData);
+        localStorage.setItem('soxna_cart', JSON.stringify(cart));
         updateCartUI();
-      } catch(e) {
-        console.error('Erreur sauvegarde panier');
-      }
+      } catch(e) {}
     }
     
     function loadCart() { 
@@ -1168,17 +1156,10 @@
         let c = localStorage.getItem('soxna_cart'); 
         if(c) {
           const parsed = JSON.parse(c);
-          if(Array.isArray(parsed)) {
-            cart = parsed.filter(item => item && typeof item.id === 'number' && typeof item.quantity === 'number');
-          } else {
-            cart = [];
-          }
-        } else { 
-          cart = []; 
-        }
-      } catch(e){ 
-        cart = []; 
-      } 
+          if(Array.isArray(parsed)) cart = parsed.filter(item => item && typeof item.id === 'number' && typeof item.quantity === 'number');
+          else cart = [];
+        } else cart = []; 
+      } catch(e){ cart = []; } 
       updateCartUI(); 
     }
     
