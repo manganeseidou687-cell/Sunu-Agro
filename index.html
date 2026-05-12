@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+  <html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Les Délices de Soxna | Mouraqué & Gété Soucre - Élégance & Saveurs</title>
+  <meta name="description" content="Artisanat culinaire sénégalais authentique : Mouraqué, Gété Soucre, douceurs faites maison. Commande facile, livraison Mbour.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      color: #2E241F;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      background: linear-gradient(135deg, #F5E6D3 0%, #EDD9C0 50%, #F5E6D3 100%);
+      background-attachment: fixed;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 20% 30%, rgba(210, 160, 110, 0.08) 0%, rgba(210, 160, 110, 0.03) 100%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: url('https://images.unsplash.com/photo-1601050690597-df0568f70950?w=1600&h=400&fit=crop') center/cover no-repeat;
+      z-index: 1000;
+      transition: 0.3s;
+    }
+    .header-glass {
+      background: rgba(248, 240, 228, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 2px solid #D4A574;
+      width: 100%;
+    }
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.7rem 2rem;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+    }
+    .logo-img {
+      width: 190px;
+      height: 96px;
+      object-fit: cover;
+      border-radius: 2%;
+      
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+      background: #FFF4E8;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      animation: logoFloat 3s ease-in-out infinite;
+      position: relative;
+    }
+    .logo-img::after {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #D4A574, #C26E2E, #D4A574);
+      opacity: 0;
+      transition: 0.3s;
+      z-index: -1;
+    }
+    .logo-img:hover {
+      transform: scale(1.08) rotate(5deg);
+      border-color: #C26E2E;
+      box-shadow: 0 12px 25px rgba(194, 110, 46, 0.3);
+    }
+    @keyframes logoFloat {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-4px); }
+    }
+    .logo-text h1 {
+      font-size: 1.55rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #B55A24, #D98A46, #C26E2E);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      position: relative;
+      display: inline-block;
+    }
+    .logo-text h1::before {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #D4A574, #C26E2E);
+      transition: width 0.4s ease;
+    }
+    .logo:hover .logo-text h1::before {
+      width: 100%;
+    }
+    .logo-text p {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: #BC7A48;
+      letter-spacing: 0.3px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-links li a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #4F3727;
+      transition: 0.25s;
+      position: relative;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-links li a i {
+      font-size: 1rem;
+      color: #C26E2E;
+    }
+    .nav-links li a:after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2.5px;
+      background: linear-gradient(90deg, #D4A574, #C26E2E);
+      border-radius: 3px;
+      transition: 0.3s;
+    }
+    .nav-links li a:hover:after, .nav-links li a.active:after { width: 100%; }
+    .nav-links li a:hover, .nav-links li a.active { color: #C26E2E; }
+    .nav-links li a:hover i, .nav-links li a.active i { color: #C26E2E; }
+
+    .search-container {
+      display: flex;
+      align-items: center;
+      background: rgba(245, 235, 220, 0.95);
+      border-radius: 40px;
+      padding: 0.3rem 0.8rem;
+      border: 1px solid #D4A574;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .search-container input {
+      background: transparent;
+      border: none;
+      padding: 0.5rem 0.7rem;
+      font-size: 0.85rem;
+      outline: none;
+      width: 150px;
+      font-family: 'Inter', sans-serif;
+    }
+    .search-container button {
+      background: none;
+      border: none;
+      color: #C26E2E;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .cart-icon {
+      cursor: pointer;
+      font-size: 1.35rem;
+      color: #C26E2E;
+      background: rgba(198, 110, 46, 0.15);
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: 0.2s;
+      position: relative;
+    }
+    .cart-icon:hover { background: #C26E2E; color: white; transform: scale(1.02);}
+    .cart-count {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      background: #C26E2E;
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 800;
+      border-radius: 30px;
+      padding: 0.2rem 0.45rem;
+      min-width: 22px;
+    }
+    .menu-toggle { display: none; font-size: 1.8rem; background: none; border: none; color: #C26E2E; cursor: pointer; }
+
+    .mobile-sidebar {
+      position: fixed;
+      top: 0;
+      left: -320px;
+      width: 280px;
+      height: 100%;
+      background: linear-gradient(135deg, #FFF9F2, #FFF5E8);
+      z-index: 2000;
+      transition: 0.3s ease-in-out;
+      box-shadow: 4px 0 30px rgba(0,0,0,0.15);
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      border-right: 3px solid #D4A574;
+    }
+    .mobile-sidebar.active { left: 0; }
+    .mobile-sidebar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #D4A574;
+      padding-bottom: 1rem;
+    }
+    .mobile-sidebar-header h3 {
+      color: #C26E2E;
+      font-size: 1.3rem;
+    }
+    .close-sidebar {
+      background: none;
+      border: none;
+      font-size: 2rem;
+      color: #C26E2E;
+      cursor: pointer;
+    }
+    .mobile-nav-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .mobile-nav-links li a {
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #4F3727;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0.5rem 0;
+      transition: 0.2s;
+    }
+    .mobile-nav-links li a i {
+      width: 28px;
+      color: #C26E2E;
+    }
+    .mobile-nav-links li a:hover {
+      color: #C26E2E;
+      padding-left: 10px;
+    }
+    .mobile-search {
+      margin-top: 1rem;
+    }
+    .mobile-search input {
+      width: 100%;
+      padding: 0.8rem;
+      border-radius: 2rem;
+      border: 2px solid #D4A574;
+      background: white;
+      font-family: 'Inter', sans-serif;
+      outline: none;
+    }
+    .sidebar-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(3px);
+      z-index: 1999;
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.25s;
+    }
+    .sidebar-overlay.active { visibility: visible; opacity: 1; }
+
+    main {
+      padding-top: 100px;
+      position: relative;
+      z-index: 1;
+    }
+    section {
+      padding: 4rem 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .section-title {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 3rem;
+      font-weight: 800;
+      color: #3E2A1F;
+      letter-spacing: -0.3px;
+    }
+    .section-title:after {
+      content: '';
+      width: 90px;
+      height: 3px;
+      background: linear-gradient(90deg, #D4A574, #C26E2E);
+      margin: 0.8rem auto 0;
+      border-radius: 4px;
+      display: block;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2.5rem;
+      background: linear-gradient(135deg, rgba(255, 240, 220, 0.92), rgba(245, 225, 195, 0.88));
+      backdrop-filter: blur(12px);
+      border-radius: 2.5rem;
+      padding: 2.5rem;
+      border: 2px solid #D4A574;
+      box-shadow: 0 18px 32px -12px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Nouvelle image d'arrière-plan pour la section hero */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://images.unsplash.com/photo-1601050690597-df0568f70950?w=1600&h=800&fit=crop');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0.15;
+      z-index: 0;
+      border-radius: 2.5rem;
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(212,165,116,0.08) 0%, transparent 70%);
+      animation: heroShine 8s infinite linear;
+      pointer-events: none;
+      z-index: 0;
+    }
+    @keyframes heroShine {
+      0% { transform: translate(-20%, -20%) rotate(0deg); }
+      100% { transform: translate(20%, 20%) rotate(360deg); }
+    }
+    .hero > * {
+      position: relative;
+      z-index: 1;
+    }
+    .hero:hover { transform: scale(1.01); }
+    .hero-text h2 {
+      font-size: 3rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #B45326, #DAA520, #E69C54);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: glowText 2s ease-in-out infinite alternate;
+    }
+    @keyframes glowText {
+      from { text-shadow: 0 0 0px rgba(212,165,116,0); }
+      to { text-shadow: 0 0 15px rgba(212,165,116,0.3); }
+    }
+    .hero-icon {
+      position: relative;
+      animation: floatImage 3s ease-in-out infinite;
+    }
+    .hero-icon::before {
+      content: '';
+      position: absolute;
+      top: 10%;
+      left: 10%;
+      right: 10%;
+      bottom: 10%;
+      border-radius: 1.8rem;
+      background: linear-gradient(135deg, rgba(212,165,116,0.2), rgba(194,110,46,0.1));
+      filter: blur(8px);
+      z-index: -1;
+      animation: pulseGlow 2s ease-in-out infinite alternate;
+    }
+    @keyframes floatImage {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+    @keyframes pulseGlow {
+      0% { opacity: 0.4; transform: scale(0.98); }
+      100% { opacity: 0.8; transform: scale(1.02); }
+    }
+    .hero-icon img {
+      border-radius: 1.8rem;
+      box-shadow: 0 18px 28px -10px rgba(0,0,0,0.15);
+      width: 100%;
+      max-width: 450px;
+      transition: all 0.4s ease;
+      position: relative;
+      z-index: 1;
+      border: 3px solid rgba(212,165,116,0.3);
+    }
+    .hero-icon img:hover {
+      transform: scale(1.02);
+      border-color: #D4A574;
+      box-shadow: 0 25px 40px -12px rgba(194,110,46,0.4);
+    }
+    .btn-primary {
+      background: linear-gradient(105deg, #C26E2E, #D4A574);
+      border: none;
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      font-weight: 700;
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      transition: 0.3s;
+      box-shadow: 0 10px 18px -8px rgba(194,110,46,0.4);
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.3);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+    .btn-primary:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+    .btn-primary:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 16px 24px -10px #C26E2E; }
+
+    .products-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.2rem;
+      justify-content: center;
+    }
+    .product-card {
+      background: white;
+      border-radius: 1.8rem;
+      width: 300px;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      box-shadow: 0 14px 28px -10px rgba(0, 0, 0, 0.08);
+      border: 1px solid #F0DEC8;
+      position: relative;
+    }
+    .product-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(212,165,116,0.1), transparent);
+      transition: left 0.6s ease;
+      pointer-events: none;
+    }
+    .product-card:hover::before {
+      left: 100%;
+    }
+    .product-card:hover {
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 28px 38px -14px rgba(194, 110, 46, 0.35);
+      border-color: #C26E2E;
+    }
+    .product-img {
+      height: 240px;
+      background: linear-gradient(135deg, #FEF3E8, #FFE8D6);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .product-img::after {
+      content: '✨';
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      font-size: 1.5rem;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .product-card:hover .product-img::after {
+      opacity: 0.7;
+    }
+    .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .product-card:hover .product-img img { transform: scale(1.08); }
+    .product-card h3 {
+      margin: 1rem 1rem 0.3rem;
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #C26E2E;
+    }
+    .product-price {
+      background: #FEF2E6;
+      display: inline-block;
+      padding: 0.3rem 1.2rem;
+      border-radius: 40px;
+      color: #C26E2E;
+      font-weight: 800;
+      margin: 0.8rem 0;
+    }
+    .btn-add-cart {
+      background: white;
+      border: 1.8px solid #C26E2E;
+      color: #C26E2E;
+      font-weight: 700;
+      padding: 0.65rem 1.4rem;
+      border-radius: 40px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: 0.2s;
+      margin-bottom: 1.3rem;
+    }
+    .btn-add-cart:hover { background: #C26E2E; color: white; transform: scale(1.02); }
+
+    .contact-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+      background: linear-gradient(135deg, rgba(255, 245, 235, 0.95), rgba(250, 235, 215, 0.9));
+      backdrop-filter: blur(10px);
+      border-radius: 2.5rem;
+      padding: 2.5rem;
+      border: 2px solid #D4A574;
+      box-shadow: 0 20px 40px -12px rgba(0,0,0,0.15);
+    }
+    .contact-form .form-group { margin-bottom: 1.5rem; }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 1rem 1.3rem;
+      border-radius: 2rem;
+      border: 2px solid #E6C8B0;
+      background: white;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      transition: all 0.3s;
+    }
+    .contact-form input:focus, .contact-form textarea:focus {
+      border-color: #C26E2E;
+      outline: none;
+      box-shadow: 0 0 0 5px rgba(194, 110, 46, 0.2);
+      transform: translateY(-2px);
+    }
+    .btn-gold {
+      background: linear-gradient(135deg, #C26E2E, #D4A574);
+      border: none;
+      border-radius: 3rem;
+      padding: 1rem;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: white;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 12px 22px -8px rgba(194,110,46,0.4);
+    }
+    .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 18px 30px -10px rgba(194,110,46,0.6); }
+    .whatsapp-big {
+      background: linear-gradient(95deg, #25D366, #20B859);
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      color: white;
+      transition: 0.3s;
+    }
+    .whatsapp-big:hover { transform: scale(1.03); }
+    .map-container {
+      margin-top: 1.5rem;
+      border-radius: 1.8rem;
+      overflow: hidden;
+      box-shadow: 0 12px 24px -8px rgba(0,0,0,0.15);
+      border: 3px solid #D4A574;
+    }
+    iframe { width: 100%; height: 240px; border: 0; }
+
+    footer {
+      background: linear-gradient(135deg, #2C231E, #3D2E25, #2C231E);
+      color: #F9E8D9;
+      text-align: center;
+      padding: 3rem 1.5rem 2rem;
+      margin-top: 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    footer::before {
+      content: "✨";
+      font-size: 140px;
+      position: absolute;
+      bottom: -30px;
+      left: -30px;
+      opacity: 0.08;
+      pointer-events: none;
+      animation: floatIcon 6s ease-in-out infinite;
+    }
+    footer::after {
+      content: "🍯";
+      font-size: 130px;
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      opacity: 0.08;
+      pointer-events: none;
+      animation: floatIcon 7s ease-in-out infinite reverse;
+    }
+    @keyframes floatIcon {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-15px) rotate(5deg); }
+    }
+    .footer-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(212, 165, 116, 0.3);
+    }
+    .footer-links a {
+      color: #F0D5B6;
+      text-decoration: none;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .footer-links a:hover { color: #D4A574; transform: translateY(-2px); }
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      gap: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+    .footer-social i {
+      font-size: 1.8rem;
+      color: #F0D5B6;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+    .footer-social i:hover { color: #D4A574; transform: translateY(-4px) scale(1.1); }
+    .footer-contact {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+    }
+    .footer-contact div {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .footer-contact i { color: #D4A574; }
+    .copyright {
+      font-size: 0.8rem;
+      opacity: 0.7;
+      margin-top: 1rem;
+    }
+
+    .feature-card {
+      background: rgba(255, 251, 245, 0.9);
+      backdrop-filter: blur(6px);
+      border-radius: 1.8rem;
+      padding: 1.5rem;
+      text-align: center;
+      flex: 1 1 200px;
+      transition: 0.3s;
+      border: 1px solid #D4A574;
+    }
+    .feature-card:hover { transform: translateY(-8px); background: white; box-shadow: 0 10px 25px rgba(194,110,46,0.2); }
+    
+    /* Styles améliorés pour la section histoire avec effet de lampe */
+    .story-card {
+      background: linear-gradient(135deg, rgba(255, 245, 235, 0.95), rgba(250, 235, 215, 0.9));
+      backdrop-filter: blur(8px);
+      border-radius: 2rem;
+      padding: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      border: 2px solid #D4A574;
+      position: relative;
+      overflow: hidden;
+    }
+    .story-card > div:first-child {
+      flex: 1.2;
+    }
+    .gallery-container {
+      flex: 2;
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .gallery-item {
+      position: relative;
+      width: calc(33.33% - 1rem);
+      min-width: 180px;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .gallery-item:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 35px rgba(194,110,46,0.3);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      display: block;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+    /* Effet de lampe (light sweep) */
+    .gallery-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 215, 150, 0.4), 
+        rgba(255, 235, 180, 0.6),
+        rgba(255, 215, 150, 0.4),
+        transparent
+      );
+      transition: left 0.7s ease-in-out;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .gallery-item:hover::before {
+      left: 100%;
+    }
+    /* Overlay élégant sur les images */
+    .gallery-item::after {
+      content: '✨';
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      font-size: 1.8rem;
+      opacity: 0;
+      transition: all 0.3s ease;
+      color: #D4A574;
+      text-shadow: 0 0 10px rgba(212,165,116,0.8);
+      z-index: 3;
+    }
+    .gallery-item:hover::after {
+      opacity: 1;
+      transform: translateX(-5px) translateY(-5px);
+    }
+    /* Badge décoratif */
+    .gallery-item .badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: linear-gradient(135deg, #C26E2E, #D4A574);
+      color: white;
+      padding: 0.3rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      z-index: 3;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .gallery-item:hover .badge {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (max-width: 780px) {
+      .gallery-item {
+        width: calc(50% - 0.75rem);
+      }
+    }
+    @media (max-width: 580px) {
+      .gallery-item {
+        width: 100%;
+      }
+    }
+
+    .cart-sidebar {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 100%;
+      max-width: 460px;
+      height: 100%;
+      background: linear-gradient(135deg, #FFFCF8, #FFF8F0);
+      z-index: 2001;
+      transition: 0.35s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      border-left: 4px solid #C26E2E;
+      box-shadow: -12px 0 30px rgba(0,0,0,0.15);
+    }
+    .cart-sidebar.active { right: 0; }
+    .cart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 1.5rem;
+      background: linear-gradient(135deg, #FEF3E8, #FFEDDC);
+      border-bottom: 2px solid #C26E2E;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .close-cart {
+      background: none;
+      border: none;
+      font-size: 2rem;
+      color: #C26E2E;
+      cursor: pointer;
+    }
+    .cart-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(5px);
+      z-index: 2000;
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.25s;
+    }
+    .cart-overlay.active { visibility: visible; opacity: 1; }
+
+    @media (max-width: 860px) {
+      .nav-container { flex-direction: row; justify-content: space-between; }
+      .nav-links { display: none; }
+      .menu-toggle { display: block; }
+      main { padding-top: 100px; }
+      .search-container { display: none; }
+    }
+    @media (max-width: 780px) {
+      .hero-text h2 { font-size: 2rem; }
+      .section-title { font-size: 1.8rem; }
+      section { padding: 2.5rem 1rem; }
+      .hero, .contact-wrapper, .story-card { padding: 1.5rem; margin: 0 0.5rem; }
+      .footer-links { gap: 1rem; flex-direction: column; align-items: center; }
+      .footer-contact { flex-direction: column; align-items: center; gap: 0.8rem; }
+    }
+    @media (max-width: 480px) {
+      .logo-img { width: 45px; height: 45px; }
+      .logo-text h1 { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-glass">
+    <div class="nav-container">
+      <div class="logo">
+        <img src="logo.jpeg" alt="Les délices de Soxna - Logo officiel" class="logo-img" onerror="this.src='https://placehold.co/200x200/D4A574/white?text=Soxna'">
+        <div class="logo-text">
+        
+        </div>
+      </div>
+      <button class="menu-toggle" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+      <ul class="nav-links">
+        <li><a href="#accueil" class="nav-link active"><i class="fas fa-home"></i> Accueil</a></li>
+        <li><a href="#produits" class="nav-link"><i class="fas fa-cake-candles"></i> Nos délices</a></li>
+        <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact & Carte</a></li>
+        <li><div class="search-container"><input type="text" id="searchInput" placeholder="Rechercher..." maxlength="100"><button id="searchBtn"><i class="fas fa-search"></i></button></div></li>
+        <li><div class="cart-icon" id="cartIconBtn"><i class="fas fa-shopping-basket"></i><span class="cart-count" id="cartCount">0</span></div></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<div class="mobile-sidebar" id="mobileSidebar">
+  <div class="mobile-sidebar-header">
+    <h3><i class="fas fa-crown"></i> Menu</h3>
+    <button class="close-sidebar" id="closeSidebarBtn">&times;</button>
+  </div>
+  <ul class="mobile-nav-links">
+    <li><a href="#accueil" class="mobile-nav-link"><i class="fas fa-home"></i> Accueil</a></li>
+    <li><a href="#produits" class="mobile-nav-link"><i class="fas fa-cake-candles"></i> Nos délices</a></li>
+    <li><a href="#contact" class="mobile-nav-link"><i class="fas fa-headset"></i> Contact & Carte</a></li>
+    <li><a href="#histoire" class="mobile-nav-link"><i class="fas fa-heart"></i> Notre histoire</a></li>
+  </ul>
+  <div class="mobile-search">
+    <input type="text" id="mobileSearchInput" placeholder="🔍 Rechercher un produit..." maxlength="100">
+  </div>
+  <div style="margin-top: auto; padding-top: 2rem;">
+    <div class="cart-icon" id="mobileCartBtn" style="display: flex; gap: 10px; background: #C26E2E20; width: 100%; border-radius: 50px; padding: 0.8rem; justify-content: center; cursor: pointer;">
+      <i class="fas fa-shopping-basket"></i> Panier (<span id="mobileCartCount">0</span>)
+    </div>
+  </div>
+</div>
+
+<div class="cart-overlay" id="cartOverlay"></div>
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header">
+    <h2 style="color:#C26E2E;"><i class="fas fa-bag-shopping"></i> Mon panier</h2>
+    <button class="close-cart" id="closeCartBtn">&times;</button>
+  </div>
+  <div id="cartItemsContainer" style="flex:1; padding:1.2rem;"></div>
+  <div style="padding:1.2rem; background:linear-gradient(135deg, #FEF3E8, #FFEDDC); border-top:2px solid #C26E2E;">
+    <div><label style="font-weight:700;"><i class="fas fa-user"></i> Nom complet *</label><input type="text" id="fullName" placeholder="Votre nom" maxlength="100" style="width:100%; padding:0.8rem; border-radius:1.5rem; border:2px solid #E6C8B0; background:white;"></div>
+    <div style="margin-top:0.8rem;"><label style="font-weight:700;"><i class="fas fa-location-dot"></i> Adresse livraison</label><textarea id="deliveryAddress" rows="2" placeholder="Quartier, rue" maxlength="500" style="width:100%; padding:0.8rem; border-radius:1.5rem; border:2px solid #E6C8B0; background:white;"></textarea></div>
+    <div style="display:flex; justify-content:space-between; font-size:1.3rem; font-weight:800; margin:1rem 0; color:#C26E2E;"><span><i class="fas fa-coins"></i> Total :</span><span id="cartTotalPrice">0 CFA</span></div>
+    <button id="checkoutWhatsappBtn" style="background: linear-gradient(95deg,#25D366,#1DAE54); width:100%; border:none; padding:0.9rem; border-radius:60px; color:white; font-weight:800; cursor:pointer;"><i class="fab fa-whatsapp"></i> Commander sur WhatsApp</button>
+  </div>
+</div>
+
+<main>
+  <section id="accueil">
+    <div class="hero" data-aos="fade-up">
+      <div class="hero-text">
+        <h2>Mouraqué & Gété Soucre<br>L'élégance des saveurs authentiques</h2>
+        <p>Voyagez au cœur des traditions sénégalaises avec nos préparations artisanales, élaborées avec amour et des ingrédients 100% naturels. Chaque délice raconte une histoire.</p>
+        <div class="hero-stats" style="display: flex; gap:1.2rem; margin:1.8rem 0; flex-wrap: wrap;">
+          <div class="stat" style="background:#F0DFCF; border-radius:2rem; padding:0.4rem 1.2rem; border:1px solid #D4A574;"><i class="fas fa-star"></i> <span style="font-weight:800; color:#C26E2E;">12+ ans</span> <span style="font-size:0.9rem;">d'excellence</span></div>
+          <div class="stat" style="background:#F0DFCF; border-radius:2rem; padding:0.4rem 1.2rem; border:1px solid #D4A574;"><i class="fas fa-home"></i> <span style="font-weight:800; color:#C26E2E;">100% maison</span></div>
+        </div>
+        <a href="#produits" class="btn-primary"><i class="fas fa-utensils"></i> Découvrir nos créations</a>
+      </div>
+      <div class="hero-icon">
+        <img src="Mbouraké.jpg" alt="Spécialités traditionnelles - Mouraqué fait maison" style="border-radius: 1.8rem; box-shadow:0 18px 28px -10px rgba(0,0,0,0.15); width:100%; max-width:450px;" onerror="this.src='https://placehold.co/600x400/D4A574/white?text=Mouraqu%C3%A9'">
+      </div>
+    </div>
+    <div class="feature-grid" style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; margin-top: 3rem;" data-aos="fade-up">
+      <div class="feature-card"><i class="fas fa-seedling" style="color:#C26E2E;"></i><h3>Ingrédients frais</h3><p>Qualité locale</p></div>
+      <div class="feature-card"><i class="fab fa-whatsapp" style="color:#25D366;"></i><h3>Commande rapide</h3><p>Panier → WhatsApp</p></div>
+      <div class="feature-card"><i class="fas fa-truck-fast" style="color:#C26E2E;"></i><h3>Livraison Mbour</h3><p>Express & soignée</p></div>
+    </div>
+  </section>
+
+  <section id="produits">
+    <h2 class="section-title" data-aos="fade-right">✨ Nos douceurs d'exception ✨</h2>
+    <div class="products-grid" id="productsContainer"></div>
+    <div id="noResultsMsg" style="text-align:center; margin-top:2rem; font-size:1.1rem; color:#B57C4A; display:none;"><i class="fas fa-search"></i> Aucun produit trouvé... Essayez "Mouraqué" ou "Gété" ✨</div>
+  </section>
+
+  <section id="histoire">
+    <div class="story-card" data-aos="zoom-in">
+      <div class="story-text">
+        <h3 style="font-size: 1.9rem; color:#C26E2E;"><i class="fas fa-heart" style="color:#C26E2E;"></i> L'héritage d'une famille passionnée</h3>
+        <p>Chez Les délices de Soxna, nous perpétuons un savoir-faire unique : Mouraqué parfumé, Gété Soucre croustillant, et bien d'autres merveilles. Chaque préparation est le fruit d'un amour infini pour la gastronomie sénégalaise.</p>
+      </div>
+      <div class="gallery-container">
+        <div class="gallery-item" data-aos="flip-left" data-aos-delay="100">
+          <img src="bourake2.jpg" alt="Mouraqué traditionnel" onerror="this.src='https://placehold.co/400x400/D4A574/white?text=Mouraqu%C3%A9'">
+          <span class="badge"><i class="fas fa-crown"></i> Tradition</span>
+        </div>
+        <div class="gallery-item" data-aos="flip-left" data-aos-delay="200">
+          <img src="Mbouraké.jpg" alt="Préparation artisanale" onerror="this.src='https://placehold.co/400x400/D4A574/white?text=Artisanat'">
+          <span class="badge"><i class="fas fa-heart"></i> Authentique</span>
+        </div>
+        <div class="gallery-item" data-aos="flip-left" data-aos-delay="300">
+          <img src="madd2.jpg" alt="Délices faits maison" onerror="this.src='https://placehold.co/400x400/D4A574/white?text=D%C3%A9lices'">
+          <span class="badge"><i class="fas fa-star"></i> Maison</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">📞 Commandez & retrouvez-nous</h2>
+    <div class="contact-wrapper" data-aos="fade-up">
+      <div class="contact-info" style="flex:1;">
+        <h3 style="color:#C26E2E; font-size: 1.5rem;"><i class="fas fa-headset"></i> Service personnalisé</h3>
+        <p>Utilisez le panier, ajoutez vos délices, validez via WhatsApp. Livraison Mbour & environs.</p>
+        <div style="margin: 1.5rem 0;"><i class="fab fa-whatsapp" style="font-size: 2rem; color:#25D366;"></i> <strong style="font-size:1.1rem;">+221 76 616 87 13</strong></div>
+        <a href="#" id="whatsappDirectBtn" class="whatsapp-big"><i class="fab fa-whatsapp"></i> Écrire directement</a>
+        <div class="map-container"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123456!2d-16.9713!3d14.4141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec1b5d1e8b3b3b3b%3A0x0!2sMbour%2C%20Senegal!5e0!3m2!1sfr!2ssn!4v1650000000000!5m2!1sfr!2ssn" allowfullscreen="" loading="lazy"></iframe></div>
+      </div>
+      <div class="contact-form" style="flex:1.2;">
+        <h3 style="margin-bottom:1.2rem; color:#C26E2E;">💌 Envoyez-nous un message</h3>
+        <form id="quickContactForm">
+          <div class="form-group"><input type="text" id="contactName" placeholder="✨ Votre nom complet" maxlength="100" required></div>
+          <div class="form-group"><input type="tel" id="contactPhone" placeholder="📱 Votre numéro WhatsApp" maxlength="20" pattern="[0-9+]{8,20}" required></div>
+          <div class="form-group"><textarea id="contactMsg" rows="4" placeholder="💬 Précisez votre commande..." maxlength="1000"></textarea></div>
+          <button type="submit" class="btn-gold"><i class="fab fa-whatsapp"></i> Envoyer la demande <i class="fas fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-links">
+      <a href="#accueil"><i class="fas fa-home"></i> Accueil</a>
+      <a href="#produits"><i class="fas fa-cake-candles"></i> Nos produits</a>
+      <a href="#histoire"><i class="fas fa-heart"></i> Notre histoire</a>
+      <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+    </div>
+   
+    <div class="footer-contact">
+      <div><i class="fas fa-phone"></i> +221 76 616 87 13</div>
+      <div><i class="fas fa-envelope"></i>sunuagro@gmail.com</div>
+      <div><i class="fas fa-map-marker-alt"></i> Mbour, Sénégal</div>
+      <div><i class="fas fa-clock"></i> Lun-Sam: 8h - 20h</div>
+    </div>
+    <div class="copyright">
+      <p>© 2025 Sunu Agro – Mouraqué, Gété soucre & artisanat sucré du Sénégal</p>
+      <p style="margin-top: 0.5rem;">✨ Fait avec passion et traditions ✨</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  (function() {
+    'use strict';
+    
+    AOS.init({ duration: 700, once: false, mirror: true, offset: 50 });
+    
+    // Fonction de sécurisation avancée - Protection XSS
+    const sanitize = function(s) {
+      if (!s) return '';
+      let str = String(s);
+      // Limitation de longueur
+      str = str.substring(0, 400);
+      // Encodage HTML complet
+      return str.replace(/[&<>]/g, function(m) {
+        if (m === '&') return '&amp;';
+        if (m === '<') return '&lt;';
+        if (m === '>') return '&gt;';
+        return m;
+      }).replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, function(c) {
+        return c;
+      }).replace(/[()]/g, function(c) {
+        return c === '(' ? '&#40;' : '&#41;';
+      });
+    };
+    
+    // Validation des entrées
+    const validateInput = function(input, maxLength, pattern) {
+      if (!input) return '';
+      let cleaned = String(input).trim();
+      if (maxLength && cleaned.length > maxLength) {
+        cleaned = cleaned.substring(0, maxLength);
+      }
+      if (pattern) {
+        const regex = new RegExp(pattern);
+        if (!regex.test(cleaned)) {
+          return '';
+        }
+      }
+      return cleaned;
+    };
+    
+    const products = [
+      { id:1, name:"Mbouraqué Traditionnel", desc:"Mil parfumé à la cardamome, texture fondante.", price:250, priceStr:"250 CFA", img:"Mbouraké.jpg" },
+      { id:2, name:"Gérté Soucre", desc:"Beignets moelleux, croustillants, enrobés de sucre pur.", price:200, priceStr:"200 CFA", img:"gete.jpg" },
+      { id:3, name:"Soungouf Premium", desc:"Farine de mil torréfiée, énergétique.", price:300, priceStr:"300 CFA", img:"sougouf.jpg" },
+      { id:4, name:"Arraw Royal", desc:"Idéal pour Lakh, Tiakry, saveur incomparable.", price:250, priceStr:"250 CFA", img:"arraw.jpg" },
+      { id:5, name:"Sanxal", desc:"Fait main, avec amour.", price:900, priceStr:"900 CFA", img:"madda.jpg" },
+      { id:5, name:"Noflay", desc:"Fait main, avec amour.", price:900, priceStr:"900 CFA", img:"madda.jpg" },
+      { id:5, name:"Madd", desc:"Fait main, avec amour.", price:900, priceStr:"900 CFA", img:"madda.jpg" },
+      { id:5, name:"Madd", desc:"Fait main, avec amour.", price:900, priceStr:"900 CFA", img:"madda.jpg" },
+      { id:5, name:"Madd", desc:"Fait main, avec amour.", price:900, priceStr:"900 CFA", img:"madda.jpg" },
+      { id:5, name:"Madd", desc:"Fait main, avec amour.", price:900, priceStr:"900 CFA", img:"madda.jpg" },
+      { id:5, name:"Madd", desc:"Fait main, avec amour.", price:900, priceStr:"900 CFA", img:"madda.jpg" }
+    ];
+    
+    let cart = [];
+    const SELLER = "221766168713";
+    
+    // Sauvegarde sécurisée du panier
+    function saveCart() {
+      try {
+        const cartData = JSON.stringify(cart);
+        localStorage.setItem('soxna_cart', cartData);
+        updateCartUI();
+      } catch(e) {
+        console.error('Erreur sauvegarde panier');
+      }
+    }
+    
+    function loadCart() { 
+      try { 
+        let c = localStorage.getItem('soxna_cart'); 
+        if(c) {
+          const parsed = JSON.parse(c);
+          if(Array.isArray(parsed)) {
+            cart = parsed.filter(item => item && typeof item.id === 'number' && typeof item.quantity === 'number');
+          } else {
+            cart = [];
+          }
+        } else { 
+          cart = []; 
+        }
+      } catch(e){ 
+        cart = []; 
+      } 
+      updateCartUI(); 
+    }
+    
+    function updateCartUI() {
+      let count = cart.reduce((s,i)=> s + (i.quantity || 0), 0);
+      const cartCountElem = document.getElementById('cartCount');
+      const mobileCartCountElem = document.getElementById('mobileCartCount');
+      if(cartCountElem) cartCountElem.innerText = count;
+      if(mobileCartCountElem) mobileCartCountElem.innerText = count;
+      
+      let container = document.getElementById('cartItemsContainer');
+      let totalSpan = document.getElementById('cartTotalPrice');
+      let total = 0;
+      if(cart.length === 0) { 
+        if(container) container.innerHTML = '<div style="text-align:center;padding:2rem;color:#BB8B67;"><i class="fas fa-shopping-cart"></i> Votre panier est vide</div>'; 
+        if(totalSpan) totalSpan.innerText = '0 CFA'; 
+        return; 
+      }
+      let html = '';
+      cart.forEach(item => { 
+        let qty = Math.max(1, Math.min(99, item.quantity || 1));
+        let itemTotal = (item.price || 0) * qty; 
+        total += itemTotal;
+        html += `<div style="background:#FFFFFF; border-radius:1.2rem; padding:0.8rem; margin-bottom:0.8rem; border:2px solid #F0DECB;">
+          <div><h4 style="color:#C26E2E;">${sanitize(item.name)}</h4><div>${item.price || 0} CFA</div></div>
+          <div style="display:flex; gap:0.6rem; margin-top:0.5rem;"><button class="qty-decr" data-id="${item.id}" style="background:#C26E2E; border:none; width:32px; height:32px; border-radius:50%; color:white; cursor:pointer;">−</button><span style="font-weight:700;">${qty}</span><button class="qty-incr" data-id="${item.id}" style="background:#C26E2E; border:none; width:32px; height:32px; border-radius:50%; color:white; cursor:pointer;">+</button></div>
+          <div style="font-weight:800; margin-top:0.5rem;">${itemTotal} CFA</div>
+          <button class="remove-item" data-id="${item.id}" style="background:#FFF2E6; border:none; padding:5px 10px; border-radius:40px; margin-top:0.5rem; cursor:pointer;"><i class="fas fa-trash-alt"></i> Supprimer</button>
+        </div>`; 
+      });
+      if(container) container.innerHTML = html;
+      if(totalSpan) totalSpan.innerText = total + ' CFA';
+      
+      document.querySelectorAll('.qty-decr').forEach(b => b.addEventListener('click',()=> changeQty(parseInt(b.dataset.id), -1)));
+      document.querySelectorAll('.qty-incr').forEach(b => b.addEventListener('click',()=> changeQty(parseInt(b.dataset.id), 1)));
+      document.querySelectorAll('.remove-item').forEach(b => b.addEventListener('click',()=> removeItem(parseInt(b.dataset.id))));
+    }
+    
+    function changeQty(id, delta) { 
+      let idx = cart.findIndex(i=>i.id===id); 
+      if(idx !== -1){ 
+        let nq = (cart[idx].quantity || 1) + delta; 
+        if(nq <= 0) cart.splice(idx,1); 
+        else cart[idx].quantity = Math.min(99, Math.max(1, nq)); 
+        saveCart(); 
+      } 
+    }
+    
+    function removeItem(id) { 
+      cart = cart.filter(i=>i.id !== id); 
+      saveCart(); 
+    }
+    
+    function addToCart(product) { 
+      let ex = cart.find(i=>i.id===product.id); 
+      if(ex) ex.quantity = Math.min(99, (ex.quantity || 1) + 1); 
+      else cart.push({id:product.id, name:product.name, price:product.price, quantity:1}); 
+      saveCart(); 
+      openCart(); 
+    }
+    
+    function renderProducts(filter = "") {
+      let cont = document.getElementById('productsContainer');
+      let noResult = document.getElementById('noResultsMsg');
+      const safeFilter = sanitize(filter).toLowerCase();
+      let filtered = products.filter(p => p.name.toLowerCase().includes(safeFilter) || p.desc.toLowerCase().includes(safeFilter));
+      if(filtered.length === 0) { 
+        if(cont) cont.innerHTML = ""; 
+        if(noResult) noResult.style.display = "block"; 
+        return; 
+      }
+      if(noResult) noResult.style.display = "none";
+      if(cont) {
+        cont.innerHTML = "";
+        filtered.forEach(p => { 
+          let div = document.createElement('div'); 
+          div.className = 'product-card'; 
+          div.setAttribute('data-aos','fade-up'); 
+          div.innerHTML = `<div class="product-img"><img src="${sanitize(p.img)}" alt="${sanitize(p.name)}" loading="lazy" onerror="this.src='https://placehold.co/400x300/D4A574/white?text=${encodeURIComponent(sanitize(p.name))}'"></div><h3>${sanitize(p.name)}</h3><div class="product-desc" style="padding:0 1rem; color:#7E5E48;">${sanitize(p.desc)}</div><div class="product-price">${sanitize(p.priceStr)}</div><button class="btn-add-cart"><i class="fas fa-cart-plus"></i> Ajouter</button>`; 
+          cont.appendChild(div); 
+          div.querySelector('.btn-add-cart').addEventListener('click', ()=> addToCart(p)); 
+        });
+      }
+    }
+    
+    const mobileSidebar = document.getElementById('mobileSidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    if(mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => { 
+        if(mobileSidebar) mobileSidebar.classList.add('active'); 
+        if(sidebarOverlay) sidebarOverlay.classList.add('active'); 
+      });
+    }
+    
+    function closeSidebar() { 
+      if(mobileSidebar) mobileSidebar.classList.remove('active'); 
+      if(sidebarOverlay) sidebarOverlay.classList.remove('active'); 
+    }
+    
+    const closeSidebarBtn = document.getElementById('closeSidebarBtn');
+    if(closeSidebarBtn) closeSidebarBtn.addEventListener('click', closeSidebar);
+    if(sidebarOverlay) sidebarOverlay.addEventListener('click', closeSidebar);
+    document.querySelectorAll('.mobile-nav-link').forEach(link => { link.addEventListener('click', closeSidebar); });
+    
+    function openCart() { 
+      const cartSidebar = document.getElementById('cartSidebar');
+      const cartOverlay = document.getElementById('cartOverlay');
+      if(cartSidebar) cartSidebar.classList.add('active'); 
+      if(cartOverlay) cartOverlay.classList.add('active'); 
+    }
+    
+    function closeCart() { 
+      const cartSidebar = document.getElementById('cartSidebar');
+      const cartOverlay = document.getElementById('cartOverlay');
+      if(cartSidebar) cartSidebar.classList.remove('active'); 
+      if(cartOverlay) cartOverlay.classList.remove('active'); 
+    }
+    
+    const cartIconBtn = document.getElementById('cartIconBtn');
+    const mobileCartBtn = document.getElementById('mobileCartBtn');
+    const closeCartBtn = document.getElementById('closeCartBtn');
+    const cartOverlay = document.getElementById('cartOverlay');
+    
+    if(cartIconBtn) cartIconBtn.addEventListener('click', openCart);
+    if(mobileCartBtn) mobileCartBtn.addEventListener('click', openCart);
+    if(closeCartBtn) closeCartBtn.addEventListener('click', closeCart);
+    if(cartOverlay) cartOverlay.addEventListener('click', closeCart);
+    
+    const searchBtn = document.getElementById('searchBtn');
+    const searchInput = document.getElementById('searchInput');
+    const mobileSearchInput = document.getElementById('mobileSearchInput');
+    
+    if(searchBtn) searchBtn.addEventListener('click', () => { renderProducts(searchInput ? searchInput.value : ''); });
+    if(searchInput) searchInput.addEventListener('keyup', (e) => { if(e.key === 'Enter') renderProducts(e.target.value); });
+    if(mobileSearchInput) mobileSearchInput.addEventListener('keyup', (e) => { renderProducts(e.target.value); });
+    
+    function orderMsg() { 
+      if(cart.length === 0){ 
+        alert("Ajoutez des produits"); 
+        return null; 
+      } 
+      let nameInput = document.getElementById('fullName');
+      let name = nameInput ? validateInput(nameInput.value, 100) : '';
+      if(!name){ 
+        alert("Nom complet requis"); 
+        return null; 
+      } 
+      let addressInput = document.getElementById('deliveryAddress');
+      let address = addressInput ? validateInput(addressInput.value, 500) : '';
+      let items = "", total = 0; 
+      cart.forEach(i=>{ 
+        let qty = Math.max(1, Math.min(99, i.quantity || 1));
+        let t = (i.price || 0) * qty; 
+        total += t; 
+        items += `➜ ${sanitize(i.name)} : ${qty} x ${i.price || 0} CFA = ${t} CFA\n`; 
+      }); 
+      return `🍲 *COMMANDE Salihatouna* 🍲\n\n👤 Client : ${sanitize(name)}\n\n🛒 *Détails* :\n${items}\n💰 TOTAL : ${total} CFA\n📍 Livraison : ${address ? sanitize(address) : "À préciser"}\n🙏 Merci !`; 
+    }
+    
+    const checkoutBtn = document.getElementById('checkoutWhatsappBtn');
+    if(checkoutBtn) {
+      checkoutBtn.addEventListener('click',()=>{ 
+        let msg = orderMsg(); 
+        if(msg) window.open(`https://wa.me/${SELLER}?text=${encodeURIComponent(msg)}`,'_blank'); 
+      });
+    }
+    
+    const quickForm = document.getElementById('quickContactForm');
+    if(quickForm) {
+      quickForm.addEventListener('submit',(e)=>{ 
+        e.preventDefault(); 
+        let nameInput = document.getElementById('contactName');
+        let phoneInput = document.getElementById('contactPhone');
+        let msgInput = document.getElementById('contactMsg');
+        let name = nameInput ? validateInput(nameInput.value, 100) : '';
+        let phone = phoneInput ? validateInput(phoneInput.value, 20, '[0-9+]{8,20}') : '';
+        let msg = msgInput ? validateInput(msgInput.value, 1000) : '';
+        if(!name || !phone){ 
+          alert("Nom et téléphone requis"); 
+          return; 
+        } 
+        let final = `📞 *Demande* : ${sanitize(name)}\n📱 WhatsApp: ${sanitize(phone)}\n💬 Message: ${sanitize(msg) || "Demande info"}`; 
+        window.open(`https://wa.me/${SELLER}?text=${encodeURIComponent(final)}`,'_blank'); 
+        if(quickForm) quickForm.reset(); 
+      });
+    }
+    
+    const whatsappDirect = document.getElementById('whatsappDirectBtn');
+    if(whatsappDirect) {
+      whatsappDirect.addEventListener('click',(e)=>{ 
+        e.preventDefault(); 
+        window.open(`https://wa.me/${SELLER}?text=${encodeURIComponent("Bonjour Soxna, je souhaite découvrir vos délices !")}`,'_blank'); 
+      });
+    }
+    
+    window.addEventListener('scroll',()=>{ 
+      let cur=""; 
+      let sections=document.querySelectorAll('section'); 
+      let pos=window.scrollY + 140; 
+      sections.forEach(s=>{ 
+        if(pos >= s.offsetTop && pos < s.offsetTop + s.clientHeight) cur=s.getAttribute('id'); 
+      }); 
+      document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(l=>{ 
+        l.classList.remove('active'); 
+        if(l.getAttribute('href') === `#${cur}`) l.classList.add('active'); 
+      }); 
+    });
+    
+    renderProducts(); 
+    loadCart();
+  })();
+</script>
+</body>
+</html>
